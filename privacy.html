@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fitness RPG Privacy Policy</title>
+<meta name="description" content="How Fitness RPG handles your Apple Health data, game progress and online play.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&display=swap">
+<style>
+  :root {
+    --bg: #F3F4F8;
+    --surface: #FFFFFF;
+    --ink: #1A1E2C;
+    --muted: #596074;
+    --rule: #DCDFE8;
+    --accent: #8A5B00;
+    --accent-soft: #FFF3D1;
+    --gold: #E8B830;
+    --night: #141826;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F121B;
+      --surface: #171B28;
+      --ink: #E7E9F1;
+      --muted: #9AA1B6;
+      --rule: #2A3042;
+      --accent: #F2C14E;
+      --accent-soft: #2A2410;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F121B;
+    --surface: #171B28;
+    --ink: #E7E9F1;
+    --muted: #9AA1B6;
+    --rule: #2A3042;
+    --accent: #F2C14E;
+    --accent-soft: #2A2410;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 16px/1.65 "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    padding-inline: 16px;
+    padding-block: 0 64px;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; }
+
+  header.masthead {
+    background: var(--night);
+    color: #F5F2E6;
+    margin: 0 -16px 40px;
+    padding: 36px 16px 32px;
+  }
+  .masthead .inner { max-width: 44rem; margin: 0 auto; display: grid; gap: 10px; }
+  .wordmark {
+    font-family: "Silkscreen", "Courier New", monospace;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(30px, 6vw, 42px);
+    line-height: 1.1;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .updated {
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    font-size: 13px;
+    color: #B9BED0;
+    letter-spacing: 0.02em;
+  }
+
+  .short {
+    background: var(--accent-soft);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 20px 22px;
+    display: grid;
+    gap: 8px;
+  }
+  .short h2 { margin: 0; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .short ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
+  nav.toc { margin: 32px 0 8px; }
+  nav.toc h2 { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; font-weight: 600; }
+  nav.toc ol { margin: 0; padding-left: 1.4em; columns: 2 16rem; column-gap: 2rem; font-size: 15px; }
+  nav.toc li { break-inside: avoid; padding-block: 2px; }
+
+  main section { padding-top: 28px; border-top: 1px solid var(--rule); margin-top: 28px; }
+  main h2 { font-size: 22px; line-height: 1.25; margin: 0 0 10px; text-wrap: balance; }
+  main h3 { font-size: 17px; margin: 22px 0 6px; }
+  p, li { max-width: 65ch; }
+  p { margin: 0 0 12px; }
+  ul { padding-left: 1.2em; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  .path { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 14px; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 5px; white-space: nowrap; }
+
+  .table-wrap { overflow-x: auto; margin: 12px 0 16px; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--rule); }
+  tr:last-child td { border-bottom: 0; }
+  th { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+  .rw { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+  .contact { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; display: grid; gap: 4px; }
+  .contact .email { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 15px; user-select: all; word-break: break-all; }
+  footer { margin-top: 40px; font-size: 13px; color: var(--muted); }
+</style>
+<style>html{-webkit-text-size-adjust:100%} body{margin:0}</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="inner">
+    <div class="wordmark">Fitness RPG</div>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated September 26, 2026 · applies to the iPhone and Apple Watch apps</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="short" role="note">
+    <h2>The short version</h2>
+    <ul>
+      <li>Fitness RPG reads workout, activity, heart, sleep and mindfulness data from Apple Health to power your hero. That data stays on your devices and is never uploaded.</li>
+      <li>Online play (guilds, guild chat and Arena duels against other players' heroes) runs on Apple's iCloud. Other players see your hero's name, levels, gear, Arena record and what you post. You're identified by an anonymous ID that iCloud makes for this app, not by your name, email address or Apple Account.</li>
+      <li>There is no advertising, analytics or tracking. We never sell your information, and Health data is never used for advertising or marketing.</li>
+      <li>You can delete your online data, turn off Health access, reset your progress or delete the app at any time.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#who">Who we are</a></li>
+      <li><a href="#health">Apple Health data</a></li>
+      <li><a href="#game">Your game progress</a></li>
+      <li><a href="#online">Playing online</a></li>
+      <li><a href="#storage">Where your information is kept</a></li>
+      <li><a href="#purchases">Purchases and Pro</a></li>
+      <li><a href="#notifications">Notifications</a></li>
+      <li><a href="#never">What we never do</a></li>
+      <li><a href="#choices">Your choices</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="who">
+      <h2>Who we are</h2>
+      <p>Fitness RPG is a role-playing game for iPhone and Apple Watch in which your real workouts level up your hero. It is made by Zach Pickrell ("we", "us"). This policy explains what information the app uses, where that information is kept and the choices you have.</p>
+    </section>
+
+    <section id="health">
+      <h2>Apple Health data</h2>
+      <p>With your permission, the app reads the following from Apple Health. You choose which types to allow when the app asks, and you can change your answer later in the Health app.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data</th><th>What the game uses it for</th></tr></thead>
+          <tbody>
+            <tr><td>Workouts</td><td>Type, start time, duration, calories and distance of each workout become XP, coins and other rewards.</td></tr>
+            <tr><td>Heart rate</td><td>Average heart rate during a workout sets its intensity zone, which scales the XP it earns.</td></tr>
+            <tr><td>Date of birth</td><td>Used only to estimate your maximum heart rate for those zones. Your birth date is never displayed or stored in the game.</td></tr>
+            <tr><td>Active energy and exercise minutes</td><td>Daily totals count toward your weekly streak.</td></tr>
+            <tr><td>Walking, running and cycling distance</td><td>Distance goals in campaigns and records in your Hero's Journal.</td></tr>
+            <tr><td>Resting heart rate and VO<sub>2</sub> max</td><td>Long-term fitness trends shown in your Hero's Journal.</td></tr>
+            <tr><td>Sleep and mindful minutes</td><td>Score the Recovery skill: hours asleep, bedtime consistency and mindful minutes each day.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>When you start a workout from the Apple Watch app, it records the workout (with the heart rate, calories and distance your watch measures) and saves it to Apple Health, so it appears in Health and Fitness like any other workout. The watch app asks for permission to save workouts before it does this. The iPhone app never writes to Apple Health.</p>
+      <p>The game keeps a summary of each imported workout (type, time, duration, calories, average heart rate, distance and the rewards it earned) and of each night's Recovery score (hours slept, bedtime and mindful minutes) as part of your game progress, so you can see them in the app.</p>
+    </section>
+
+    <section id="game">
+      <h2>Your game progress</h2>
+      <p>The app saves what you do in the game: your hero's name and appearance, skill levels, items, coins, pets, guild, settings and journal entries. This save lives on your iPhone. The parts of it that other players need to see are also shared online, as described next.</p>
+    </section>
+
+    <section id="online">
+      <h2>Playing online</h2>
+      <p>Guilds, guild chat and the Arena are played with other people. They use the app's own database in Apple's iCloud (CloudKit), and you need to be signed in to iCloud to use them. Everything else in the game works without it. Online play stays off until you agree to our community rules, which the app asks for in the Arena and Guild tabs. Until then, nothing about you or your hero is uploaded.</p>
+
+      <h3>Your online ID</h3>
+      <p>iCloud gives each player an ID that exists only for Fitness RPG. It doesn't contain or reveal your name, email address, phone number or Apple Account, and we can't use it to find out who you are. Everything you do online is stored under this ID.</p>
+
+      <h3>What other players can see</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data</th><th>Why it's shared</th></tr></thead>
+          <tbody>
+            <tr><td>Your hero</td><td>Name, appearance, skill levels and experience, equipped gear, pet, and the food you bring to the Arena. Other players' games fight your hero in Arena duels and show it on the leaderboard.</td></tr>
+            <tr><td>Arena record</td><td>Rating, wins, losses, best tier this season and the results of duels against your hero (the challenger's hero name and level, who won, and both ratings).</td></tr>
+            <tr><td>Activity dates</td><td>When you first played and when you last played. The Arena uses them to match active players and to spot heroes whose levels are impossible for how long they've played.</td></tr>
+            <tr><td>Guild activity</td><td>Joining, leaving and rank changes, what you put into or take from the guild bank, upgrades you buy for the guild, and your raid damage and attempts each week. Your guildmates see this in the guild's log. The guild's name, description and size appear in the guild list for everyone.</td></tr>
+            <tr><td>Guild chat</td><td>Messages you post, with your hero's name. Members of your guild can read them.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Your skill levels come from your workouts, so they show roughly how much you train. No workout, heart rate, sleep, mindfulness or other Health data is uploaded, and neither is your date of birth.</p>
+
+      <h3>Reports and moderation</h3>
+      <p>You can report a message, a hero name or a guild. A report contains the reason you chose, the reported player's online ID and a copy of the reported text. Only you and our moderators can read it. We review reports, and we may hide messages, hide guilds or block players from online play when they break the community rules. We keep reports for as long as we need them to handle them. You can also block a player so you no longer see their messages. Your block list stays on your iPhone.</p>
+
+      <h3>Game Center</h3>
+      <p>If you're signed in to Game Center, your Arena rating is also posted to a Game Center leaderboard, where Apple shows it with your Game Center nickname. Apple runs Game Center under its own privacy policy. We don't receive your Game Center account details.</p>
+
+      <h3>Deleting your online data</h3>
+      <p>In the app, <span class="path">Settings › Online Play › Delete My Online Data</span> takes you out of your guild and deletes your hero's online profile, your chat messages, your guild list entries and the duel records you created. Your raid entries lose your hero's name. The guild's shared history (for example that a member deposited coins) stays, because your guildmates' games need it, but it is linked only to your anonymous online ID. This also turns online play off, and nothing is shared again unless you agree to the community rules again. Deleting the app doesn't delete your online data, so use this option first or email us and we'll delete it for you.</p>
+    </section>
+
+    <section id="storage">
+      <h2>Where your information is kept</h2>
+      <ul>
+        <li><strong>On your iPhone.</strong> Your game progress is a file inside the app on your iPhone. We don't run servers of our own.</li>
+        <li><strong>In Fitness RPG's iCloud database.</strong> What you share by playing online (see <a href="#online">Playing online</a>) is stored in the app's public database in Apple's iCloud, which Apple runs for us. Apple's data centers may be outside your country. We can see this database through Apple's developer tools, which we use to keep the game running and to handle reports.</li>
+        <li><strong>On your Apple Watch.</strong> Your iPhone sends a small summary of your hero (activity, levels, coins and a short scene animation) to the Fitness RPG watch app over Apple's secure connection between your paired devices. When you finish a workout on the watch, the watch tells your iPhone so it can import that workout.</li>
+        <li><strong>In widgets.</strong> The Home Screen widget and watch complications read a small summary from storage that only Fitness RPG's own app, widgets and complications can access.</li>
+        <li><strong>In your device backups.</strong> If you back up your iPhone to iCloud or a computer, Apple includes the app's saved progress in that backup, as it does for other apps, so your hero comes back when you restore. Apple Health data itself is backed up by Apple under Health's own rules, not by the game.</li>
+        <li><strong>In backups you export.</strong> In the app, <span class="path">Settings (the gear on Home) › Save Data › Export Backup</span> creates a file of your game progress and hands it to you. It goes only where you choose to send it.</li>
+      </ul>
+    </section>
+
+    <section id="purchases">
+      <h2>Purchases and Pro</h2>
+      <p>Fitness RPG Pro is an auto-renewing subscription sold through the App Store. Apple handles payment, and we never receive your name, Apple Account or payment details. The app checks with Apple whether your subscription is active and remembers when it renews, so Pro works while you're offline. Manage or cancel it in <span class="path">Settings › Apple Account › Subscriptions</span>.</p>
+    </section>
+
+    <section id="notifications">
+      <h2>Notifications</h2>
+      <p>If you allow them, the app schedules reminders on your device (for example when your hero runs out of Stamina or when your streak needs a workout). They are created on your iPhone, and you can turn each one off in the app's settings.</p>
+      <p>When you play online, iCloud can also notify you about new guild chat messages, about guild activity (silently, to keep your guild up to date) and when other players challenge your hero. These are sent by Apple's iCloud and push notification service. We don't run a notification server.</p>
+    </section>
+
+    <section id="never">
+      <h2>What we never do</h2>
+      <ul>
+        <li>Sell or rent your information, or share it with anyone other than the players you play with online and Apple, which hosts the online database.</li>
+        <li>Use Health data for advertising, marketing or data mining, or disclose it to third parties.</li>
+        <li>Upload your Health data to any server, or sync it through iCloud. (Your own device backups, described above, are made by Apple and controlled by you.)</li>
+        <li>Show ads or include analytics, crash-reporting or advertising SDKs. The app uses only Apple's own frameworks.</li>
+        <li>Track you across other companies' apps or websites.</li>
+      </ul>
+    </section>
+
+    <section id="choices">
+      <h2>Your choices</h2>
+      <ul>
+        <li><strong>Health access.</strong> Change what the app can read at any time in the iPhone's <span class="path">Settings › Health › Data Access &amp; Devices › Fitness RPG</span>. The game keeps working with whatever you allow.</li>
+        <li><strong>Notifications.</strong> Turn reminders off in the app's settings, or all of them in the iPhone's <span class="path">Settings › Notifications › Fitness RPG</span>.</li>
+        <li><strong>Online play.</strong> Online play is off until you agree to the community rules in the Arena or Guild tab, so you choose whether to share anything. <span class="path">Settings › Online Play › Delete My Online Data</span> removes what you've shared and turns online play off again (see <a href="#online">Playing online</a>).</li>
+        <li><strong>Reset.</strong> In the app, <span class="path">Settings › Save Data › Reset All Progress</span> erases your game progress on the device. It doesn't delete your online data or take you out of your guild.</li>
+        <li><strong>Delete.</strong> Deleting Fitness RPG from your iPhone and Apple Watch removes all of its data from those devices. Workouts the watch app saved to Apple Health stay in Health until you delete them there.</li>
+      </ul>
+    </section>
+
+    <section id="children">
+      <h2>Children</h2>
+      <p>Online play lets people chat with other players, so it isn't meant for children under 13 (or the minimum age for online services where you live). We don't knowingly collect information from children. If you believe a child has shared information through online play, email us and we'll delete it.</p>
+    </section>
+
+    <section id="changes">
+      <h2>Changes to this policy</h2>
+      <p>If the app changes how it handles information, we will update this page and the date at the top before that version is released, and we will describe the change in the app's release notes.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact">
+        <p>Questions about this policy or your data? Email us. If you do, we receive your email address and your message and use them only to reply.</p>
+        <div class="email">zachpickrell5497@gmail.com</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Fitness RPG is not affiliated with Apple. Apple Health, Apple Watch, iPhone, iCloud and Game Center are trademarks of Apple Inc.</footer>
+</div>
+</body>
+</html>
