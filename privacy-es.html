@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fitness RPG · Aviso de privacidad</title>
+<meta name="description" content="Cómo maneja Fitness RPG tus datos de Salud de Apple, tu progreso en el juego y el juego en línea.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&display=swap">
+<style>
+  :root {
+    --bg: #F3F4F8;
+    --surface: #FFFFFF;
+    --ink: #1A1E2C;
+    --muted: #596074;
+    --rule: #DCDFE8;
+    --accent: #8A5B00;
+    --accent-soft: #FFF3D1;
+    --gold: #E8B830;
+    --night: #141826;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F121B;
+      --surface: #171B28;
+      --ink: #E7E9F1;
+      --muted: #9AA1B6;
+      --rule: #2A3042;
+      --accent: #F2C14E;
+      --accent-soft: #2A2410;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F121B;
+    --surface: #171B28;
+    --ink: #E7E9F1;
+    --muted: #9AA1B6;
+    --rule: #2A3042;
+    --accent: #F2C14E;
+    --accent-soft: #2A2410;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 16px/1.65 "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    padding-inline: 16px;
+    padding-block: 0 64px;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; }
+
+  header.masthead {
+    background: var(--night);
+    color: #F5F2E6;
+    margin: 0 -16px 40px;
+    padding: 36px 16px 32px;
+  }
+  .masthead .inner { max-width: 44rem; margin: 0 auto; display: grid; gap: 10px; }
+  .wordmark {
+    font-family: "Silkscreen", "Courier New", monospace;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(30px, 6vw, 42px);
+    line-height: 1.1;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .updated {
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    font-size: 13px;
+    color: #B9BED0;
+    letter-spacing: 0.02em;
+  }
+
+  .langs { font-size: 14px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .langs a { color: #F2C14E; }
+  .langs [aria-current] { color: #F5F2E6; text-decoration: none; font-weight: 600; }
+
+  .short {
+    background: var(--accent-soft);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 20px 22px;
+    display: grid;
+    gap: 8px;
+  }
+  .short h2 { margin: 0; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .short ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
+  nav.toc { margin: 32px 0 8px; }
+  nav.toc h2 { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; font-weight: 600; }
+  nav.toc ol { margin: 0; padding-left: 1.4em; columns: 2 16rem; column-gap: 2rem; font-size: 15px; }
+  nav.toc li { break-inside: avoid; padding-block: 2px; }
+
+  main section { padding-top: 28px; border-top: 1px solid var(--rule); margin-top: 28px; }
+  main h2 { font-size: 22px; line-height: 1.25; margin: 0 0 10px; text-wrap: balance; }
+  main h3 { font-size: 17px; margin: 22px 0 6px; }
+  p, li { max-width: 65ch; }
+  p { margin: 0 0 12px; }
+  ul { padding-left: 1.2em; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  .path { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 14px; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 5px; white-space: nowrap; }
+
+  .table-wrap { overflow-x: auto; margin: 12px 0 16px; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--rule); }
+  tr:last-child td { border-bottom: 0; }
+  th { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+  .rw { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+  .contact { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; display: grid; gap: 4px; }
+  .contact .email { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 15px; user-select: all; word-break: break-all; }
+  footer { margin-top: 40px; font-size: 13px; color: var(--muted); }
+</style>
+<style>html{-webkit-text-size-adjust:100%} body{margin:0}</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="inner">
+    <div class="wordmark">Fitness RPG</div>
+    <h1>Aviso de privacidad</h1>
+    <div class="updated">Última actualización: 15 de octubre de 2026 · aplica a las apps para iPhone y Apple Watch</div>
+    <nav class="langs" aria-label="Idioma"><a href="privacy.html" lang="en">English</a><a href="privacy-es.html" aria-current="page" lang="es">Español</a><a href="privacy-fr.html" lang="fr">Français</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="short" role="note">
+    <h2>En resumen</h2>
+    <ul>
+      <li>Fitness RPG lee datos de entrenamientos, actividad, corazón, sueño y atención plena de la app Salud de Apple para hacer avanzar a tu héroe. Esos datos se quedan en tus dispositivos y nunca se suben.</li>
+      <li>El juego en línea (gremios, chat del gremio y duelos de Arena contra los héroes de otros jugadores) funciona con iCloud de Apple. Otros jugadores ven el nombre, los niveles, el equipo y el historial de Arena de tu héroe, y lo que publicas. Se te identifica con un ID anónimo que iCloud crea para esta app, no con tu nombre, tu correo electrónico ni tu Cuenta de Apple.</li>
+      <li>No hay publicidad, analíticas ni rastreo. Nunca vendemos tu información, y los datos de Salud nunca se usan para publicidad ni marketing.</li>
+      <li>Puedes borrar tus datos en línea, desactivar el acceso a Salud, restablecer tu progreso o eliminar la app en cualquier momento.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="Índice">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#who">Quiénes somos</a></li>
+      <li><a href="#health">Datos de Salud de Apple</a></li>
+      <li><a href="#game">Tu progreso en el juego</a></li>
+      <li><a href="#online">Jugar en línea</a></li>
+      <li><a href="#storage">Dónde se guarda tu información</a></li>
+      <li><a href="#purchases">Compras y Pro</a></li>
+      <li><a href="#notifications">Notificaciones</a></li>
+      <li><a href="#never">Lo que nunca hacemos</a></li>
+      <li><a href="#choices">Tus opciones</a></li>
+      <li><a href="#rights">Tus derechos</a></li>
+      <li><a href="#children">Menores</a></li>
+      <li><a href="#changes">Cambios a este aviso</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="who">
+      <h2>Quiénes somos</h2>
+      <p>Fitness RPG es un juego de rol para iPhone y Apple Watch en el que tus entrenamientos reales hacen subir de nivel a tu héroe. Lo hace Zach Pickrell ("nosotros"), quien es el responsable de los datos personales descritos aquí. La app se ofrece en Estados Unidos, Canadá y México. Este aviso explica qué información usa la app, dónde se guarda esa información y qué opciones tienes.</p>
+    </section>
+
+    <section id="health">
+      <h2>Datos de Salud de Apple</h2>
+      <p>Con tu permiso, la app lee lo siguiente de la app Salud. Tú eliges qué tipos permitir cuando la app lo pide, y puedes cambiar tu respuesta después en la app Salud.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Dato</th><th>Para qué lo usa el juego</th></tr></thead>
+          <tbody>
+            <tr><td>Entrenamientos</td><td>El tipo, la hora de inicio, la duración, las calorías y la distancia de cada entrenamiento se convierten en XP, monedas y otras recompensas.</td></tr>
+            <tr><td>Frecuencia cardíaca</td><td>La frecuencia cardíaca promedio durante un entrenamiento define su zona de intensidad, que ajusta la XP que gana.</td></tr>
+            <tr><td>Fecha de nacimiento</td><td>Solo se usa para estimar tu frecuencia cardíaca máxima para esas zonas. Tu fecha de nacimiento nunca se muestra ni se guarda en el juego.</td></tr>
+            <tr><td>Energía activa y minutos de ejercicio</td><td>Los totales diarios cuentan para tu racha semanal.</td></tr>
+            <tr><td>Distancia caminando, corriendo y en bicicleta</td><td>Metas de distancia en las campañas y récords en tu Diario del héroe.</td></tr>
+            <tr><td>Frecuencia cardíaca en reposo y VO<sub>2</sub> máx.</td><td>Tendencias de condición física a largo plazo que se muestran en tu Diario del héroe.</td></tr>
+            <tr><td>Sueño y minutos de atención plena</td><td>Puntúan la habilidad Recuperación: horas de sueño, regularidad de la hora de dormir y minutos de atención plena cada día.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Cuando inicias un entrenamiento desde la app del Apple Watch, esta lo registra (con la frecuencia cardíaca, las calorías y la distancia que mide tu reloj) y lo guarda en Salud, así que aparece en Salud y en Fitness como cualquier otro entrenamiento. La app del reloj pide permiso para guardar entrenamientos antes de hacerlo. La app del iPhone nunca escribe en Salud.</p>
+      <p>El juego guarda un resumen de cada entrenamiento importado (tipo, hora, duración, calorías, frecuencia cardíaca promedio, distancia y las recompensas que ganó) y de la puntuación de Recuperación de cada noche (horas de sueño, hora de dormir y minutos de atención plena) como parte de tu progreso, para que puedas verlos en la app.</p>
+    </section>
+
+    <section id="game">
+      <h2>Tu progreso en el juego</h2>
+      <p>La app guarda lo que haces en el juego: el nombre y la apariencia de tu héroe, los niveles de habilidad, los objetos, las monedas, las mascotas, el gremio, los ajustes y las entradas del diario. Este progreso vive en tu iPhone. Las partes que otros jugadores necesitan ver también se comparten en línea, como se describe a continuación.</p>
+    </section>
+
+    <section id="online">
+      <h2>Jugar en línea</h2>
+      <p>Los gremios, el chat del gremio y la Arena se juegan con otras personas. Usan la base de datos propia de la app en iCloud de Apple (CloudKit), y necesitas tener sesión iniciada en iCloud para usarlos. Todo lo demás del juego funciona sin ello. El juego en línea está desactivado hasta que aceptas nuestras normas de la comunidad, que la app te pide en las pestañas Arena y Gremio. Hasta entonces, no se sube nada sobre ti ni sobre tu héroe.</p>
+
+      <h3>Tu ID en línea</h3>
+      <p>iCloud le da a cada jugador un ID que solo existe para Fitness RPG. No contiene ni revela tu nombre, correo electrónico, número de teléfono ni Cuenta de Apple, y no podemos usarlo para saber quién eres. Todo lo que haces en línea se guarda con este ID.</p>
+
+      <h3>Lo que pueden ver otros jugadores</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Dato</th><th>Por qué se comparte</th></tr></thead>
+          <tbody>
+            <tr><td>Tu héroe</td><td>Nombre, apariencia, niveles de habilidad y experiencia, equipo equipado, mascota y la comida que llevas a la Arena. Los juegos de otros jugadores pelean contra tu héroe en duelos de Arena y lo muestran en la clasificación.</td></tr>
+            <tr><td>Historial de Arena</td><td>Puntuación, victorias, derrotas, mejor nivel de la temporada y los resultados de los duelos contra tu héroe (el nombre y el nivel del héroe retador, quién ganó y ambas puntuaciones).</td></tr>
+            <tr><td>Fechas de actividad</td><td>Cuándo jugaste por primera vez y cuándo jugaste por última vez. La Arena las usa para emparejar a jugadores activos y para detectar héroes con niveles imposibles para el tiempo que llevan jugando.</td></tr>
+            <tr><td>Actividad del gremio</td><td>Entradas, salidas y cambios de rango, lo que pones en el banco del gremio o sacas de él, las mejoras que compras para el gremio y tu daño e intentos de incursión cada semana. Tus compañeros de gremio lo ven en el registro del gremio. El nombre, la descripción y el tamaño del gremio aparecen en la lista de gremios para todos.</td></tr>
+            <tr><td>Chat del gremio</td><td>Los mensajes que publicas, con el nombre de tu héroe. Los miembros de tu gremio pueden leerlos.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Tus niveles de habilidad vienen de tus entrenamientos, así que muestran más o menos cuánto entrenas. No se sube ningún dato de entrenamientos, frecuencia cardíaca, sueño, atención plena ni otros datos de Salud, ni tampoco tu fecha de nacimiento.</p>
+
+      <h3>Reportes y moderación</h3>
+      <p>Puedes reportar un mensaje, el nombre de un héroe o un gremio. Un reporte contiene el motivo que elegiste, el ID en línea del jugador reportado y una copia del texto reportado. Solo tú y nuestros moderadores pueden leerlo. Revisamos los reportes, y podemos ocultar mensajes, ocultar gremios o bloquear a jugadores del juego en línea cuando incumplen las normas de la comunidad. Guardamos los reportes el tiempo que necesitemos para atenderlos. También puedes bloquear a un jugador para dejar de ver sus mensajes. Tu lista de bloqueados se queda en tu iPhone.</p>
+
+      <h3>Game Center</h3>
+      <p>Si tienes sesión iniciada en Game Center, tu puntuación de Arena también se publica en una clasificación de Game Center, donde Apple la muestra con tu apodo de Game Center. Apple gestiona Game Center bajo su propia política de privacidad. No recibimos los datos de tu cuenta de Game Center.</p>
+
+      <h3>Borrar tus datos en línea</h3>
+      <p>En la app, <span class="path">Ajustes › Juego en línea › Borrar mis datos en línea</span> te saca de tu gremio y borra el perfil en línea de tu héroe, tus mensajes de chat, tus entradas en la lista de gremios y los registros de duelos que creaste. Tus registros de incursión pierden el nombre de tu héroe. El historial compartido del gremio (por ejemplo, que un miembro depositó monedas) se conserva, porque los juegos de tus compañeros lo necesitan, pero solo está vinculado a tu ID en línea anónimo. Esto también desactiva el juego en línea, y no se vuelve a compartir nada a menos que aceptes de nuevo las normas de la comunidad. Eliminar la app no borra tus datos en línea, así que usa primero esta opción o escríbenos y los borraremos por ti.</p>
+    </section>
+
+    <section id="storage">
+      <h2>Dónde se guarda tu información</h2>
+      <ul>
+        <li><strong>En tu iPhone.</strong> Tu progreso en el juego es un archivo dentro de la app en tu iPhone. No tenemos servidores propios.</li>
+        <li><strong>En la base de datos de iCloud de Fitness RPG.</strong> Lo que compartes al jugar en línea (consulta <a href="#online">Jugar en línea</a>) se guarda en la base de datos pública de la app en iCloud de Apple, que Apple administra para nosotros. Los centros de datos de Apple pueden estar fuera de tu país. Podemos ver esta base de datos con las herramientas para desarrolladores de Apple, que usamos para mantener el juego funcionando y para atender reportes.</li>
+        <li><strong>En tu propio iCloud.</strong> A menos que lo desactives en <span class="path">Ajustes › Datos guardados › Copia de iCloud</span>, la app guarda una copia de tu progreso en tu almacenamiento privado de iCloud, para que un iPhone nuevo o una reinstalación puedan restaurar a tu héroe. Solo tú puedes leerla. Nosotros no podemos verla, y ocupa tu propio almacenamiento de iCloud. Contiene solo resultados del juego, nunca datos de Salud: ni horas, duraciones, calorías, frecuencia cardíaca, distancias ni sueño. Después de restaurar, la app vuelve a leer tu historial de entrenamientos de Salud en ese iPhone.</li>
+        <li><strong>En tu Apple Watch.</strong> Tu iPhone envía un pequeño resumen de tu héroe (actividad, niveles, monedas y una breve animación de la escena) a la app de Fitness RPG en el reloj, por la conexión segura de Apple entre tus dispositivos vinculados. Cuando terminas un entrenamiento en el reloj, este se lo indica a tu iPhone para que pueda importarlo.</li>
+        <li><strong>En los widgets.</strong> El widget de la pantalla de inicio y las complicaciones del reloj leen un pequeño resumen de un almacenamiento al que solo pueden acceder la app, los widgets y las complicaciones de Fitness RPG.</li>
+        <li><strong>En los respaldos de tu dispositivo.</strong> Si respaldas tu iPhone en iCloud o en una computadora, Apple incluye el progreso guardado de la app en ese respaldo, como con otras apps, para que tu héroe regrese al restaurar. Los datos de Salud los respalda Apple según las reglas propias de Salud, no el juego.</li>
+        <li><strong>En las copias que exportas.</strong> En la app, <span class="path">Ajustes (el engranaje en Inicio) › Datos guardados › Exportar copia de seguridad</span> crea un archivo con tu progreso y te lo entrega. Solo va adonde tú decidas enviarlo.</li>
+      </ul>
+    </section>
+
+    <section id="purchases">
+      <h2>Compras y Pro</h2>
+      <p>Fitness RPG Pro es una suscripción de renovación automática que se vende en el App Store. Apple gestiona el pago, y nunca recibimos tu nombre, tu Cuenta de Apple ni tus datos de pago. La app consulta con Apple si tu suscripción está activa y recuerda cuándo se renueva, para que Pro funcione sin conexión. Adminístrala o cancélala en <span class="path">Ajustes › Cuenta de Apple › Suscripciones</span> del iPhone.</p>
+    </section>
+
+    <section id="notifications">
+      <h2>Notificaciones</h2>
+      <p>Si las permites, la app programa recordatorios en tu dispositivo (por ejemplo, cuando tu héroe se queda sin Energía o cuando tu racha necesita un entrenamiento). Se crean en tu iPhone, y puedes desactivar cada uno en los ajustes de la app.</p>
+      <p>Cuando juegas en línea, iCloud también puede avisarte de mensajes nuevos en el chat del gremio, de actividad del gremio (en silencio, para mantener tu gremio actualizado) y de cuando otros jugadores desafían a tu héroe. Los envían iCloud y el servicio de notificaciones push de Apple. No tenemos un servidor de notificaciones.</p>
+    </section>
+
+    <section id="never">
+      <h2>Lo que nunca hacemos</h2>
+      <ul>
+        <li>Vender o alquilar tu información, ni compartirla con nadie más que con los jugadores con quienes juegas en línea y con Apple, que aloja la base de datos en línea.</li>
+        <li>Usar datos de Salud para publicidad, marketing o minería de datos, ni revelarlos a terceros.</li>
+        <li>Subir tus datos de Salud a ningún servidor ni sincronizarlos por iCloud. La Copia de iCloud de tu progreso no incluye datos de Salud. (Los respaldos de tu dispositivo, descritos arriba, los hace Apple y los controlas tú.)</li>
+        <li>Mostrar anuncios ni incluir SDK de analíticas, de reportes de fallos ni de publicidad. La app usa solo frameworks de Apple.</li>
+        <li>Rastrearte en apps o sitios web de otras empresas.</li>
+      </ul>
+    </section>
+
+    <section id="choices">
+      <h2>Tus opciones</h2>
+      <ul>
+        <li><strong>Acceso a Salud.</strong> Cambia lo que la app puede leer en cualquier momento en <span class="path">Ajustes › Salud › Acceso a datos y dispositivos › Fitness RPG</span> del iPhone. El juego sigue funcionando con lo que permitas.</li>
+        <li><strong>Notificaciones.</strong> Desactiva los recordatorios en los ajustes de la app, o todos a la vez en <span class="path">Ajustes › Notificaciones › Fitness RPG</span> del iPhone.</li>
+        <li><strong>Juego en línea.</strong> El juego en línea está desactivado hasta que aceptas las normas de la comunidad en la pestaña Arena o Gremio, así que tú decides si compartes algo. <span class="path">Ajustes › Juego en línea › Borrar mis datos en línea</span> elimina lo que has compartido y vuelve a desactivar el juego en línea (consulta <a href="#online">Jugar en línea</a>).</li>
+        <li><strong>Restablecer.</strong> En la app, <span class="path">Ajustes › Datos guardados › Restablecer todo el progreso</span> borra tu progreso en el dispositivo, y después la Copia de iCloud se reemplaza con el nuevo héroe. No borra tus datos en línea ni te saca de tu gremio.</li>
+        <li><strong>Copia de iCloud.</strong> Desactívala en <span class="path">Ajustes › Datos guardados › Copia de iCloud</span>. Para borrar la copia que ya está en iCloud, abre <span class="path">Ajustes › [tu nombre] › iCloud › Administrar almacenamiento</span> en el iPhone, busca Fitness RPG y borra sus datos.</li>
+        <li><strong>Eliminar.</strong> Eliminar Fitness RPG de tu iPhone y tu Apple Watch borra todos sus datos de esos dispositivos (pero no tu Copia de iCloud, para que una reinstalación pueda restaurar a tu héroe). Los entrenamientos que la app del reloj guardó en Salud se quedan ahí hasta que los borres.</li>
+      </ul>
+    </section>
+
+    <section id="rights">
+      <h2>Tus derechos</h2>
+      <p>La mayor parte de lo que el juego guarda sobre ti nunca sale de tus dispositivos, y puedes verlo o borrarlo tú mismo en la app (consulta <a href="#choices">Tus opciones</a>). Sobre lo que está guardado en línea, y sobre cualquier cosa que nos hayas enviado por correo, puedes pedirnos que:</p>
+      <ul>
+        <li>te digamos qué datos personales tenemos sobre ti y te demos una copia;</li>
+        <li>los corrijamos;</li>
+        <li>los borremos;</li>
+        <li>dejemos de usarlos para un fin concreto, o que retiremos un consentimiento que diste.</li>
+      </ul>
+      <p>Escríbenos a la dirección de abajo. Dinos el nombre de tu héroe para que podamos encontrar tus registros en línea, que se guardan con tu ID en línea anónimo. Respondemos en un plazo de 30 días. Podemos pedirte que confirmes que la solicitud es tuya, por ejemplo cambiando el nombre de tu héroe por una palabra que te enviemos, porque de otro modo no sabemos quién eres.</p>
+      <p>En México, estos son tus derechos ARCO (acceso, rectificación, cancelación y oposición). En Canadá, si no estás conforme con nuestra respuesta, puedes presentar una queja ante la Oficina del Comisionado de Privacidad de Canadá o, en Quebec, ante la Commission d'accès à l'information du Québec.</p>
+      <p>Si alguna vez un incidente de seguridad pone en riesgo tus datos personales, te avisaremos a ti y a las autoridades como lo exija la ley.</p>
+    </section>
+
+    <section id="children">
+      <h2>Menores</h2>
+      <p>El juego en línea permite chatear con otros jugadores, así que no está pensado para menores de 13 años (o de la edad mínima para servicios en línea donde vives). No recopilamos a sabiendas información de menores. Si crees que un menor compartió información a través del juego en línea, escríbenos y la borraremos.</p>
+    </section>
+
+    <section id="changes">
+      <h2>Cambios a este aviso</h2>
+      <p>Si la app cambia la forma en que maneja la información, actualizaremos esta página y la fecha de arriba antes de publicar esa versión, y describiremos el cambio en las notas de la versión de la app.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contacto</h2>
+      <div class="contact">
+        <p>¿Tienes preguntas sobre este aviso o tus datos, o una solicitud sobre tus derechos? Escríbenos. Si lo haces, recibimos tu dirección de correo y tu mensaje, y los usamos solo para responderte.</p>
+        <p>Responsable de la protección de los datos personales: Zach Pickrell.</p>
+        <div class="email">zachpickrell5497@gmail.com</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Fitness RPG no está afiliado a Apple. Apple Health, Apple Watch, iPhone, iCloud y Game Center son marcas comerciales de Apple Inc.</footer>
+</div>
+</body>
+</html>
