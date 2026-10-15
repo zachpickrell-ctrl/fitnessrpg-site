@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fitness RPG Support</title>
+<meta name="description" content="Get help with Fitness RPG: workouts, guilds, iCloud Backup, Pro and your data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&display=swap">
+<style>
+  :root {
+    --bg: #F3F4F8;
+    --surface: #FFFFFF;
+    --ink: #1A1E2C;
+    --muted: #596074;
+    --rule: #DCDFE8;
+    --accent: #8A5B00;
+    --accent-soft: #FFF3D1;
+    --gold: #E8B830;
+    --night: #141826;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F121B;
+      --surface: #171B28;
+      --ink: #E7E9F1;
+      --muted: #9AA1B6;
+      --rule: #2A3042;
+      --accent: #F2C14E;
+      --accent-soft: #2A2410;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F121B;
+    --surface: #171B28;
+    --ink: #E7E9F1;
+    --muted: #9AA1B6;
+    --rule: #2A3042;
+    --accent: #F2C14E;
+    --accent-soft: #2A2410;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 16px/1.65 "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    padding-inline: 16px;
+    padding-block: 0 64px;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; }
+
+  header.masthead {
+    background: var(--night);
+    color: #F5F2E6;
+    margin: 0 -16px 40px;
+    padding: 36px 16px 32px;
+  }
+  .masthead .inner { max-width: 44rem; margin: 0 auto; display: grid; gap: 10px; }
+  .wordmark {
+    font-family: "Silkscreen", "Courier New", monospace;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(30px, 6vw, 42px);
+    line-height: 1.1;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .updated {
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    font-size: 13px;
+    color: #B9BED0;
+    letter-spacing: 0.02em;
+  }
+
+  .langs { font-size: 14px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .langs a { color: #F2C14E; }
+  .langs [aria-current] { color: #F5F2E6; text-decoration: none; font-weight: 600; }
+
+  details { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 0 18px; margin: 10px 0; }
+  details[open] { padding-bottom: 8px; }
+  summary { cursor: pointer; font-weight: 600; padding: 14px 0; list-style-position: outside; }
+  summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  details p, details ul { margin-top: 0; }
+  .short {
+    background: var(--accent-soft);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 20px 22px;
+    display: grid;
+    gap: 8px;
+  }
+  .short h2 { margin: 0; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .short ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
+  nav.toc { margin: 32px 0 8px; }
+  nav.toc h2 { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; font-weight: 600; }
+  nav.toc ol { margin: 0; padding-left: 1.4em; columns: 2 16rem; column-gap: 2rem; font-size: 15px; }
+  nav.toc li { break-inside: avoid; padding-block: 2px; }
+
+  main section { padding-top: 28px; border-top: 1px solid var(--rule); margin-top: 28px; }
+  main h2 { font-size: 22px; line-height: 1.25; margin: 0 0 10px; text-wrap: balance; }
+  main h3 { font-size: 17px; margin: 22px 0 6px; }
+  p, li { max-width: 65ch; }
+  p { margin: 0 0 12px; }
+  ul { padding-left: 1.2em; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  .path { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 14px; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 5px; white-space: nowrap; }
+
+  .table-wrap { overflow-x: auto; margin: 12px 0 16px; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--rule); }
+  tr:last-child td { border-bottom: 0; }
+  th { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+  .rw { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+  .contact { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; display: grid; gap: 4px; }
+  .contact .email { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 15px; user-select: all; word-break: break-all; }
+  footer { margin-top: 40px; font-size: 13px; color: var(--muted); }
+</style>
+<style>html{-webkit-text-size-adjust:100%} body{margin:0}</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="inner">
+    <div class="wordmark">Fitness RPG</div>
+    <h1>Support</h1>
+    <div class="updated">Updated October 15, 2026 · iPhone and Apple Watch</div>
+    <nav class="langs" aria-label="Language"><a href="support.html" aria-current="page" lang="en">English</a><a href="support-es.html" lang="es">Español</a><a href="support-fr.html" lang="fr">Français</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <main>
+    <section id="contact" style="border-top:0;margin-top:0;padding-top:0">
+      <h2>Contact us</h2>
+      <div class="contact">
+        <p>Email us with any question or problem. We read every message and usually reply within two days.</p>
+        <div class="email"><a href="mailto:zachpickrell5497@gmail.com?subject=Fitness%20RPG%20Support">zachpickrell5497@gmail.com</a></div>
+      </div>
+      <h3>Help us help you: include</h3>
+      <ul>
+        <li>The app version, from <span class="path">Settings › About › Version</span></li>
+        <li>Your iPhone model and iOS version, and your Apple Watch model if it's about the watch</li>
+        <li>Your hero's name, if it's about guilds, the Arena or online play</li>
+        <li>What happened, and a screenshot if you can</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>Common questions</h2>
+      <details>
+        <summary>My workouts aren't showing up</summary>
+        <ul>
+          <li>Make sure Apple Health is connected: <span class="path">Settings (the gear on Home) › Apple Health</span>. If it says Not connected, tap <strong>Connect Apple Health</strong>.</li>
+          <li>Check that Fitness RPG is allowed to read workouts in the iPhone's <span class="path">Settings › Health › Data Access &amp; Devices › Fitness RPG</span>.</li>
+          <li>Tap <strong>Sync Workouts from Health</strong> in <span class="path">Train › Workouts</span>, or <strong>Sync Now</strong> in Settings.</li>
+          <li>Only workouts inside the <strong>Import Window</strong> (Settings › Apple Health) are imported, and types listed under <strong>Ignored Workout Types</strong> are skipped.</li>
+          <li>A workout from your Apple Watch can take a few minutes to reach your iPhone's Health app.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Why did a workout earn less XP than I expected?</summary>
+        <p>The workout history shows why under each workout. The usual reasons:</p>
+        <ul>
+          <li><strong>Entered by hand:</strong> workouts typed into Health earn no rewards.</li>
+          <li><strong>Heart rate near resting</strong>, or <strong>no heart rate and almost no calories:</strong> the workout earns a quarter of its XP and coins, and no raid attempt or Arena ticket.</li>
+          <li><strong>Long day:</strong> minutes past 90 in a day count half, and past 180 a quarter.</li>
+          <li><strong>Heart-rate zone:</strong> easier sessions (Zone 1–2) earn a bit less, harder ones more.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>I got a new iPhone or reinstalled the app</summary>
+        <p>If <strong>iCloud Backup</strong> is on (<span class="path">Settings › Save Data</span>), sign in to the same iCloud account and open the app: it offers to restore your hero. Your workout history comes back from Apple Health as it syncs to the new iPhone. You can also restore a file you saved with <strong>Export Backup</strong> using <strong>Restore from Backup</strong>.</p>
+      </details>
+      <details>
+        <summary>I can't join a guild</summary>
+        <ul>
+          <li>Guilds need you to be signed in to iCloud and to agree to the community rules in the Guild tab.</li>
+          <li>You can be in one guild at a time. Leave your current guild at the bottom of its Hall first.</li>
+          <li>Some guilds require a minimum Combat Level, shown on the guild's card.</li>
+          <li>If it says you're already a member, update to the latest version and tap <strong>Join</strong> again to get your membership back.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>How do I report or block another player?</summary>
+        <p>Long-press a chat message, a guild member or a leaderboard row to report or block that player. Long-press a guild in the guild list to report it. We review reports within 24 hours.</p>
+      </details>
+      <details>
+        <summary>How do I manage or cancel Fitness RPG Pro?</summary>
+        <p>Pro is sold by Apple. Manage or cancel it in your iPhone's <span class="path">Settings › Apple Account › Subscriptions</span>. Deleting the app doesn't cancel it. For a refund, use Apple's <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. If Pro isn't showing on a new device, tap <strong>Restore Purchases</strong> in <span class="path">Settings › Membership</span>.</p>
+      </details>
+      <details>
+        <summary>How do I get the Apple Watch app?</summary>
+        <p>It installs with the iPhone app if your watch is set to install apps automatically. If not, open the Watch app on your iPhone, find Fitness RPG under Available Apps and tap Install. Workouts you start on the watch save to Apple Health and count in the game.</p>
+      </details>
+      <details>
+        <summary>How do I delete my data?</summary>
+        <ul>
+          <li><strong>Online data</strong> (your hero's profile, chat messages, Arena records): <span class="path">Settings › Online Play › Delete My Online Data</span>.</li>
+          <li><strong>iCloud Backup:</strong> turn it off in <span class="path">Settings › Save Data</span>, then delete Fitness RPG's data in the iPhone's <span class="path">Settings › [your name] › iCloud › Manage Storage</span>.</li>
+          <li><strong>Everything on your devices:</strong> delete the app from your iPhone and Apple Watch.</li>
+        </ul>
+        <p>Or email us and we'll do it for you. See the <a href="privacy.html#rights">Privacy Policy</a> for your rights.</p>
+      </details>
+    </section>
+
+    <section id="more">
+      <h2>More</h2>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><strong>Health &amp; Safety:</strong> Fitness RPG is a game, not medical advice. Talk to your doctor before starting a new exercise program, and stop if you feel chest pain, dizziness or unusual shortness of breath. Read it in the app in <span class="path">Settings › About › Health &amp; Safety</span>.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Fitness RPG is not affiliated with Apple. Apple Health, Apple Watch, iPhone, iCloud and Game Center are trademarks of Apple Inc.</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fitness RPG · Assistance</title>
+<meta name="description" content="Obtenir de l'aide avec Fitness RPG : entraînements, guildes, Sauvegarde iCloud, Pro et vos données.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&display=swap">
+<style>
+  :root {
+    --bg: #F3F4F8;
+    --surface: #FFFFFF;
+    --ink: #1A1E2C;
+    --muted: #596074;
+    --rule: #DCDFE8;
+    --accent: #8A5B00;
+    --accent-soft: #FFF3D1;
+    --gold: #E8B830;
+    --night: #141826;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F121B;
+      --surface: #171B28;
+      --ink: #E7E9F1;
+      --muted: #9AA1B6;
+      --rule: #2A3042;
+      --accent: #F2C14E;
+      --accent-soft: #2A2410;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F121B;
+    --surface: #171B28;
+    --ink: #E7E9F1;
+    --muted: #9AA1B6;
+    --rule: #2A3042;
+    --accent: #F2C14E;
+    --accent-soft: #2A2410;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 16px/1.65 "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    padding-inline: 16px;
+    padding-block: 0 64px;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; }
+
+  header.masthead {
+    background: var(--night);
+    color: #F5F2E6;
+    margin: 0 -16px 40px;
+    padding: 36px 16px 32px;
+  }
+  .masthead .inner { max-width: 44rem; margin: 0 auto; display: grid; gap: 10px; }
+  .wordmark {
+    font-family: "Silkscreen", "Courier New", monospace;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(30px, 6vw, 42px);
+    line-height: 1.1;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .updated {
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    font-size: 13px;
+    color: #B9BED0;
+    letter-spacing: 0.02em;
+  }
+
+  .langs { font-size: 14px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .langs a { color: #F2C14E; }
+  .langs [aria-current] { color: #F5F2E6; text-decoration: none; font-weight: 600; }
+
+  details { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 0 18px; margin: 10px 0; }
+  details[open] { padding-bottom: 8px; }
+  summary { cursor: pointer; font-weight: 600; padding: 14px 0; list-style-position: outside; }
+  summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  details p, details ul { margin-top: 0; }
+  .short {
+    background: var(--accent-soft);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 20px 22px;
+    display: grid;
+    gap: 8px;
+  }
+  .short h2 { margin: 0; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .short ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
+  nav.toc { margin: 32px 0 8px; }
+  nav.toc h2 { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; font-weight: 600; }
+  nav.toc ol { margin: 0; padding-left: 1.4em; columns: 2 16rem; column-gap: 2rem; font-size: 15px; }
+  nav.toc li { break-inside: avoid; padding-block: 2px; }
+
+  main section { padding-top: 28px; border-top: 1px solid var(--rule); margin-top: 28px; }
+  main h2 { font-size: 22px; line-height: 1.25; margin: 0 0 10px; text-wrap: balance; }
+  main h3 { font-size: 17px; margin: 22px 0 6px; }
+  p, li { max-width: 65ch; }
+  p { margin: 0 0 12px; }
+  ul { padding-left: 1.2em; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  .path { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 14px; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 5px; white-space: nowrap; }
+
+  .table-wrap { overflow-x: auto; margin: 12px 0 16px; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--rule); }
+  tr:last-child td { border-bottom: 0; }
+  th { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+  .rw { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+  .contact { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; display: grid; gap: 4px; }
+  .contact .email { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 15px; user-select: all; word-break: break-all; }
+  footer { margin-top: 40px; font-size: 13px; color: var(--muted); }
+</style>
+<style>html{-webkit-text-size-adjust:100%} body{margin:0}</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="inner">
+    <div class="wordmark">Fitness RPG</div>
+    <h1>Assistance</h1>
+    <div class="updated">Mis à jour le 15 octobre 2026 · iPhone et Apple Watch</div>
+    <nav class="langs" aria-label="Langue"><a href="support.html" lang="en">English</a><a href="support-es.html" lang="es">Español</a><a href="support-fr.html" aria-current="page" lang="fr">Français</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <main>
+    <section id="contact" style="border-top:0;margin-top:0;padding-top:0">
+      <h2>Nous joindre</h2>
+      <div class="contact">
+        <p>Écrivez-nous pour toute question ou tout problème. Nous lisons chaque message et répondons habituellement dans un délai de deux jours.</p>
+        <div class="email"><a href="mailto:zachpickrell5497@gmail.com?subject=Fitness%20RPG%20Support">zachpickrell5497@gmail.com</a></div>
+      </div>
+      <h3>Pour mieux vous aider, indiquez</h3>
+      <ul>
+        <li>La version de l'app, dans <span class="path">Réglages › À propos › Version</span></li>
+        <li>Le modèle de votre iPhone et la version d'iOS, et le modèle de votre Apple Watch s'il s'agit de la montre</li>
+        <li>Le nom de votre héros, s'il s'agit des guildes, de l'Arène ou du jeu en ligne</li>
+        <li>Ce qui s'est passé, et une capture d'écran si possible</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>Questions fréquentes</h2>
+      <details>
+        <summary>Mes entraînements n'apparaissent pas</summary>
+        <ul>
+          <li>Vérifiez que Santé est connectée : <span class="path">Réglages (l'engrenage dans Accueil) › App Santé</span>. Si l'app indique « Non connecté », touchez <strong>Connecter l'app Santé</strong>.</li>
+          <li>Vérifiez que Fitness RPG a le droit de lire les entraînements dans <span class="path">Réglages › Santé › Accès aux données et appareils › Fitness RPG</span> sur l'iPhone.</li>
+          <li>Touchez <strong>Synchroniser les séances depuis Santé</strong> dans <span class="path">Entraînement › Séances</span>, ou <strong>Synchroniser</strong> dans les réglages.</li>
+          <li>Seuls les entraînements compris dans la <strong>Période d'import</strong> (Réglages › App Santé) sont importés, et les types listés dans <strong>Types de séance ignorés</strong> sont exclus.</li>
+          <li>Un entraînement de l'Apple Watch peut prendre quelques minutes à arriver dans Santé sur l'iPhone.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Pourquoi un entraînement a-t-il rapporté moins d'XP que prévu?</summary>
+        <p>L'historique des séances indique la raison sous chaque entraînement. Les raisons habituelles :</p>
+        <ul>
+          <li><strong>Saisi à la main :</strong> les entraînements entrés dans Santé ne rapportent aucune récompense.</li>
+          <li><strong>Fréquence cardiaque proche du repos</strong>, ou <strong>pas de fréquence cardiaque et presque aucune calorie :</strong> l'entraînement rapporte le quart de son XP et de ses pièces, sans tentative de raid ni ticket d'Arène.</li>
+          <li><strong>Longue journée :</strong> les minutes au-delà de 90 dans une journée comptent pour moitié, et au-delà de 180, pour un quart.</li>
+          <li><strong>Zone cardiaque :</strong> les séances plus douces (zones 1–2) rapportent un peu moins, les plus intenses davantage.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>J'ai un nouvel iPhone ou j'ai réinstallé l'app</summary>
+        <p>Si la <strong>Sauvegarde iCloud</strong> est activée (<span class="path">Réglages › Données de sauvegarde</span>), connectez-vous au même compte iCloud et ouvrez l'app : elle vous propose de restaurer votre héros. Votre historique d'entraînements revient depuis Santé à mesure qu'elle se synchronise sur le nouvel iPhone. Vous pouvez aussi restaurer un fichier enregistré avec <strong>Exporter une sauvegarde</strong> grâce à <strong>Restaurer une sauvegarde</strong>.</p>
+      </details>
+      <details>
+        <summary>Je n'arrive pas à rejoindre une guilde</summary>
+        <ul>
+          <li>Les guildes exigent d'être connecté à iCloud et d'accepter les règles de la communauté dans l'onglet Guilde.</li>
+          <li>Vous ne pouvez faire partie que d'une guilde à la fois. Quittez d'abord votre guilde actuelle, au bas de sa Salle.</li>
+          <li>Certaines guildes exigent un niveau de combat minimal, indiqué sur leur carte.</li>
+          <li>Si l'app indique que vous êtes déjà membre, installez la dernière version et touchez de nouveau <strong>Rejoindre</strong> pour retrouver votre place.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Comment signaler ou bloquer un autre joueur?</summary>
+        <p>Touchez longuement un message du chat, un membre de la guilde ou une ligne du classement pour signaler ou bloquer ce joueur. Touchez longuement une guilde dans la liste des guildes pour la signaler. Nous examinons les signalements dans un délai de 24 heures.</p>
+      </details>
+      <details>
+        <summary>Comment gérer ou annuler Fitness RPG Pro?</summary>
+        <p>Pro est vendu par Apple. Gérez-le ou annulez-le dans <span class="path">Réglages › Compte Apple › Abonnements</span> sur l'iPhone. Supprimer l'app ne l'annule pas. Pour un remboursement, utilisez <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> d'Apple. Si Pro n'apparaît pas sur un nouvel appareil, touchez <strong>Restaurer les achats</strong> dans <span class="path">Réglages › Abonnement</span>.</p>
+      </details>
+      <details>
+        <summary>Comment obtenir l'app Apple Watch?</summary>
+        <p>Elle s'installe avec l'app iPhone si votre montre installe les apps automatiquement. Sinon, ouvrez l'app Watch sur votre iPhone, trouvez Fitness RPG dans Apps disponibles et touchez Installer. Les entraînements démarrés sur la montre sont enregistrés dans Santé et comptent dans le jeu.</p>
+      </details>
+      <details>
+        <summary>Comment supprimer mes données?</summary>
+        <ul>
+          <li><strong>Données en ligne</strong> (profil de votre héros, messages du chat, registres d'Arène) : <span class="path">Réglages › Jeu en ligne › Supprimer mes données en ligne</span>.</li>
+          <li><strong>Sauvegarde iCloud :</strong> désactivez-la dans <span class="path">Réglages › Données de sauvegarde</span>, puis supprimez les données de Fitness RPG dans <span class="path">Réglages › [votre nom] › iCloud › Gérer le stockage</span> sur l'iPhone.</li>
+          <li><strong>Tout ce qui se trouve sur vos appareils :</strong> supprimez l'app de votre iPhone et de votre Apple Watch.</li>
+        </ul>
+        <p>Ou écrivez-nous et nous le ferons pour vous. Consultez vos droits dans la <a href="privacy-fr.html#rights">Politique de confidentialité</a>.</p>
+      </details>
+    </section>
+
+    <section id="more">
+      <h2>Plus</h2>
+      <ul>
+        <li><a href="privacy-fr.html">Politique de confidentialité</a></li>
+        <li><strong>Santé et sécurité :</strong> Fitness RPG est un jeu, pas un avis médical. Consultez votre médecin avant de commencer un nouveau programme d'exercice, et arrêtez-vous si vous ressentez une douleur à la poitrine, des étourdissements ou un essoufflement inhabituel. À relire dans l'app, dans <span class="path">Réglages › À propos › Santé et sécurité</span>.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Fitness RPG n'est pas affilié à Apple. Apple Health, Apple Watch, iPhone, iCloud et Game Center sont des marques de commerce d'Apple Inc.</footer>
+</div>
+</body>
+</html>
